@@ -54,18 +54,6 @@ export default {
 </script>
 
 <template>
-  <div v-if="selectedParty">
-    <h1>{{ selectedParty.name }}</h1>
-    <nav>
-      <ul>
-        <li @click="activeTab = 'tasks'">Tasks</li>
-        <!--<li @click="activeTab = 'shopping'">Shopping</li>-->
-        <!--<li @click="activeTab = 'invitations'">Invitations</li>-->
-      </ul>
-    </nav>
-    <div>
-      <component :is="activeTab" :party="selectedParty"></component>
-    </div>
-  </div>
+<Tasks></Tasks>
 </template>
 

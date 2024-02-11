@@ -13,8 +13,6 @@ export default {
     const showPartyDetails = (party) => {
     router.push({ name: 'party', params: { id: party.id } });
     }
-
-
     return {
       store,
       showPartyDetails,
@@ -46,7 +44,7 @@ export default {
         tasks:'',
         shopping:'',
         invitations:'',
-        id:this.setId(),
+        id:this.name,
 
       });
       this.resetForm();
@@ -64,11 +62,12 @@ export default {
     getCurrentParty(party){
       localStorage.setItem(party.name, JSON.stringify(party))
     },
+  },
+  computed: {
     setID(){
       return this.name.trim()
     },
-    
-  },
+  }
 }
 </script>
 
