@@ -69,8 +69,8 @@ h3 {
     top: calc(50% - 25px);
     left: -26px;
     position: absolute;
-    border: 1px solid black;
-    background: black;
+    border: 1px solid white;
+    background: white;
     border-radius: 8px;
     width: 50px;
     height: 50px;

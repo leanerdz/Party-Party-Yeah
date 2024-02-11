@@ -14,7 +14,6 @@ import HelloWorld from './components/HelloWorld.vue'
 
   <RouterView />
 </template>
-</template>
 
 <style>
 @media (min-width: 1024px) {
