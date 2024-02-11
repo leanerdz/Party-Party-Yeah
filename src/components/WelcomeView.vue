@@ -4,12 +4,19 @@ import addButton from './addButton.vue'
 import heartIcon from './icons/heartIcon.vue'
 import FormComp from './FormComp.vue'
 import { store } from '../stores/PartiesStore'
+import { useRoute, useRouter } from 'vue-router'
 
 export default {
   components: { FormComp, currentPartiesItem, addButton, heartIcon},
   setup() {
+    const route = useRoute()
+    const router = useRouter()
+    const showPartyDetails = (party) => {
+      router.push({ path: `/party/${party.id}` }) 
+    }
     return {
       store,
+      showPartyDetails,
     }
   },
   data() {
@@ -21,6 +28,10 @@ export default {
       date:'',
       place:'',
       title:'',
+      tasks:'',
+      shopping:'',
+      invitations:'',
+      id:'',
       add:false,
     }
   },
@@ -31,7 +42,10 @@ export default {
         descr: this.descr,
         theme: this.theme,
         date: this.date,
-        place: this.place
+        place: this.place,
+        tasks:'',
+        shopping:'',
+        invitations:'',
       });
       this.resetForm();
     },
@@ -55,7 +69,7 @@ export default {
 
 <template>
   <ul>
-    <li v-for="party in store.currentParties" :key="party.name" :party="party" @click.stop="getCurrentParty(party)">
+    <li v-for="party in store.currentParties" :key="party.name" :party="party" @click.stop="showPartyDetails(party)">
       <currentPartiesItem>
         <template #icon>
           <heartIcon/>
