@@ -1,15 +1,20 @@
 
-/*import {reactive} from 'vue'
+import { reactive } from 'vue'
+
+const savedParties = JSON.parse(localStorage.getItem("currentParties")) || [];
 
 export const store = reactive ({
-  addParty(party) {
-    this.currentParties.push(party)
-    localStorage.setItem('currentParties', JSON.stringify(this.currentParties))
-  },
+  parties: savedParties,
+  currentParties: savedParties,
+  addParties(party) {
+    this.parties.push(party);
+    localStorage.setItem("currentParties", JSON.stringify(this.parties));
+    this.currentParties = [...this.parties];
+  }
 })
-*/
 
-import { defineStore } from 'pinia'
+
+/*import { defineStore } from 'pinia'
 
 export const usePartiesStore = defineStore("PartiesStore", {
   state: () => ({
@@ -29,7 +34,7 @@ export const usePartiesStore = defineStore("PartiesStore", {
     },
   },
 })
-
+*/
 /*
 import { defineStore } from 'pinia'
 
