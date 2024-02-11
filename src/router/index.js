@@ -22,7 +22,6 @@
 
 // export default router
 
-// index.js
 
 import { createRouter, createWebHistory } from 'vue-router'
 import WelcomeView from '../components/WelcomeView.vue'
@@ -30,12 +29,14 @@ import CurrentPartyView from '../components/CurrentPartyView.vue'
 
 const routes = [
   { path: '/', component: WelcomeView },
-  { path: '/party/:id', component: CurrentPartyView, props: true },
+  { path: '/party/:id', name: 'party', component: CurrentPartyView, props: true }
+
 ]
 
 const router = createRouter({
   history: createWebHistory(),
-  routes, // Utilisez "routes" ici au lieu de "useRoutes"
+  routes,
 })
 
 export default router
+

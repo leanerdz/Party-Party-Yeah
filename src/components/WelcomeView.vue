@@ -4,16 +4,17 @@ import addButton from './addButton.vue'
 import heartIcon from './icons/heartIcon.vue'
 import FormComp from './FormComp.vue'
 import { store } from '../stores/PartiesStore'
-import { useRoute, useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 
 export default {
   components: { FormComp, currentPartiesItem, addButton, heartIcon},
   setup() {
-    const route = useRoute()
     const router = useRouter()
     const showPartyDetails = (party) => {
-      router.push({ path: `/party/${party.id}` }) 
+    router.push({ name: 'party', params: { id: party.id } });
     }
+
+
     return {
       store,
       showPartyDetails,
@@ -31,7 +32,6 @@ export default {
       tasks:'',
       shopping:'',
       invitations:'',
-      id:'',
       add:false,
     }
   },
@@ -46,6 +46,8 @@ export default {
         tasks:'',
         shopping:'',
         invitations:'',
+        id:this.setId(),
+
       });
       this.resetForm();
     },
@@ -61,7 +63,10 @@ export default {
     },
     getCurrentParty(party){
       localStorage.setItem(party.name, JSON.stringify(party))
-    }
+    },
+    setID(){
+      return this.name.trim()
+    },
     
   },
 }
