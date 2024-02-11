@@ -12,7 +12,6 @@ export default {
       store,
     }
   },
-  // NE pas faire avec Pinia mais plutot avec le store de base car facile avec l'option. 
   data() {
     return {
       parties:[],
@@ -35,7 +34,6 @@ export default {
         place: this.place
       });
       this.resetForm();
-      console.log(this.parties)
     },
     resetForm() {
       this.name = '';
@@ -46,6 +44,9 @@ export default {
     },
     showForm(){
       this.add = !this.add
+    },
+    getCurrentParty(party){
+      localStorage.setItem(party.name, JSON.stringify(party))
     }
     
   },
@@ -54,7 +55,7 @@ export default {
 
 <template>
   <ul>
-    <li v-for="party in store.currentParties" :key="party.name" @click.stop="console.log(party)">
+    <li v-for="party in store.currentParties" :key="party.name" :party="party" @click.stop="getCurrentParty(party)">
       <currentPartiesItem>
         <template #icon>
           <heartIcon/>

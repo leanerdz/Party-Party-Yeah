@@ -1,26 +1,28 @@
 <script>
 </script>
 <template>
-  <div class="item">
-    <i>
-      <slot name="icon"></slot>
-    </i>
-    <div class="details">
-      <h3>
-        <slot name="heading"></slot>
-      </h3>
-      <h4>
-        <slot name="date"></slot>
-      </h4>
-      <h4>
-        <slot name="place"></slot>
-      </h4>
-      <h4>
-        <slot name="descr"></slot>
-      </h4>
-      <h4>
-        <slot name="theme"></slot>
-      </h4>
+  <div @click="selectParty">
+    <div class="item">
+      <i>
+        <slot name="icon"></slot>
+      </i>
+      <div class="details">
+        <h3>
+          <slot name="heading"></slot>
+        </h3>
+        <h4>
+          <slot name="date"></slot>
+        </h4>
+        <h4>
+          <slot name="place"></slot>
+        </h4>
+        <h4>
+          <slot name="descr"></slot>
+        </h4>
+        <h4>
+          <slot name="theme"></slot>
+        </h4>
+      </div>
     </div>
   </div>
 </template>

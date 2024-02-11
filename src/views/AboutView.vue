@@ -1,10 +1,19 @@
-<script>
-import { usePartiesStore } from '../stores/counter'
+<script >
+import HelloWorld from './components/HelloWorld.vue'
 </script>
+
 <template>
-  <div class="about">
-    <h1>This is an about page</h1>
-  </div>
+  <header>
+    <img alt="Vue logo" class="logo" src="@/assets/disco-ball-svgrepo-com.svg" width="125" height="125" />
+
+    <div class="wrapper">
+      <HelloWorld msg="Party Party Yeah !" />
+
+    </div>
+  </header>
+
+  <RouterView />
+</template>
 </template>
 
 <style>
@@ -17,4 +26,3 @@ import { usePartiesStore } from '../stores/counter'
 }
 </style>
 
-../stores/PartiesStore
