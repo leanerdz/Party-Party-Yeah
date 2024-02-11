@@ -22,7 +22,7 @@
         },
         methods: {
             submit(){
-                this.store.addTask({
+                this.tasks.push({
                     descr: this.descr,
                     name: this.name,
                 });
