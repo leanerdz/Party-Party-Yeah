@@ -28,4 +28,4 @@ npm run dev
 npm run build
 ```
 
-J'ai pas reussi a faire tout ce que je voulais pleinement. J'ai tout donné jusqu'au bout. Les morceaux de codes commentée j'ai pas eu le temps de comprendre pourquoi ils faisaient tout péter. 
+J'ai pas reussi a faire tout ce que je voulais pleinement. J'ai fait au mieux. Les morceaux de codes commentée j'ai pas eu le temps de comprendre pourquoi ils faisaient tout péter. 
