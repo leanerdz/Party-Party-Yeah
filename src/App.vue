@@ -11,12 +11,10 @@ import HelloWorld from './components/HelloWorld.vue'
       <HelloWorld msg="Party Party Yeah !" />
 
       <nav>
-        <RouterLink to="/">Parties</RouterLink>
-        <RouterLink to="/party/:id">Details</RouterLink>
+        <RouterLink to="/">Back to Parties</RouterLink>
       </nav>
     </div>
   </header>
-
   <RouterView />
 </template>
 
@@ -43,6 +41,7 @@ nav {
 
 nav a.router-link-exact-active {
   color: black;
+  font-size: 20px;
 }
 
 nav a.router-link-exact-active:hover {

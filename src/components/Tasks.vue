@@ -15,16 +15,16 @@
         data() {
         return {
             tasks: [],
-            name:'Cook',
-            descr:'easy',
+            name:'',
+            descr:'',
             add:false,
         }
         },
         methods: {
             submit(){
-                this.tasks.push({
-                name: this.name,
-                descr: this.descr,
+                this.store.addTask({
+                    descr: this.descr,
+                    name: this.name,
                 });
                 this.resetForm()
             },
@@ -44,7 +44,7 @@
       <h2>Tasks</h2>
       <ul>
         <li v-for="task in tasks">
-            <input type="checkbox">{{ task.name }}
+            <input type="checkbox">{{ task.name }} : {{ task.descr }}
         </li>
       </ul>
         <addButton @click.stop="showForm">
